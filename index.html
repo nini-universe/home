@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nini Universe - 일상을 특별하게 만드는 앱</title>
+    <meta name="description" content="Nini Universe는 게임과 다양한 생활앱을 만드는 창작 스튜디오입니다.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #FAF7F0 0%, #F5E6D3 100%);
+            min-height: 100vh;
+            color: #4A4A4A;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 700;
+            color: #8B6F47;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #6B5D4F;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #8E8E8E;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .about h2 {
+            font-size: 28px;
+            color: #8B6F47;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 16px;
+            color: #6B5D4F;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 15px;
+        }
+
+        /* Products Section */
+        .products {
+            margin: 60px 0;
+        }
+
+        .products h2 {
+            font-size: 32px;
+            color: #8B6F47;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+
+        .product-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            color: #8B6F47;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: #6B5D4F;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, #E8A87C, #CD735E);
+            color: white;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .store-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .store-link {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: #8B6F47;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .store-link:hover {
+            background: #6B5D4F;
+        }
+
+        .coming-soon {
+            background: #D3D3D3;
+            cursor: not-allowed;
+        }
+
+        .coming-soon:hover {
+            background: #D3D3D3;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            color: #8B6F47;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: #6B5D4F;
+            margin-bottom: 20px;
+        }
+
+        .email {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #8B6F47, #6B5D4F);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .email:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8E8E8E;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 36px;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            .about, .contact {
+                padding: 30px 20px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">Nini Universe</div>
+            <div class="tagline">일상을 특별하게 만드는 앱</div>
+            <div class="subtitle">Games & Apps</div>
+        </header>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>About Us</h2>
+            <p>
+                Nini Universe는 사용자의 일상에 작은 기쁨을 더하는 게임과 다양한 앱을 만듭니다.
+            </p>
+            <p>
+                우리는 기술과 감성을 결합하여, 사람들이 자신의 이야기를 기록하고 공유하며,
+                즐거움을 느낄 수 있는 경험을 만들어갑니다.
+            </p>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products">
+            <h2>Our Apps</h2>
+            <div class="product-grid">
+                <!-- Catlog -->
+                <div class="product-card">
+                    <div class="badge">NOW AVAILABLE</div>
+                    <div class="product-icon">🐱</div>
+                    <h3>Catlog</h3>
+                    <p>
+                        고양이와 함께하는 감성 다이어리. 일상을 기록하고, 친구들과 공유하며,
+                        나만의 고양이 방을 꾸며보세요.
+                    </p>
+                    <div class="store-links">
+                        <a href="#" class="store-link coming-soon">📱 Google Play</a>
+                        <a href="#" class="store-link coming-soon">🍎 App Store</a>
+                    </div>
+                </div>
+
+                <!-- Future App 1 -->
+                <div class="product-card">
+                    <div class="badge">COMING SOON</div>
+                    <div class="product-icon">🎮</div>
+                    <h3>Next Project</h3>
+                    <p>
+                        새로운 게임이 곧 출시됩니다.
+                        기대해 주세요!
+                    </p>
+                </div>
+
+                <!-- Future App 2 -->
+                <div class="product-card">
+                    <div class="badge">IN DEVELOPMENT</div>
+                    <div class="product-icon">✨</div>
+                    <h3>More to Come</h3>
+                    <p>
+                        더 많은 프로젝트를 준비하고 있습니다.
+                        Nini Universe의 새로운 앱들을 기대해 주세요.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>문의사항이나 제안이 있으신가요?<br>언제든지 연락주세요!</p>
+            <a href="mailto:official.nini.universe@gmail.com" class="email">
+                📧 official.nini.universe@gmail.com
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Nini Universe. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 12px;">
+                Making everyday special with joy and creativity
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
